@@ -14,6 +14,7 @@
 - [Install](#install)
 - [Basic usage](#basic-usage)
 - [Configuration](#configuration)
+  - [Content](#content)
   - [Properties](#properties)
   - [Styling Highlighting](#styling-highlighting)
   - [Custom look and feel](#custom-look-and-feel)
@@ -49,12 +50,43 @@ console.log(c);`
 
 ## Configuration
 
+### Content
+`Syntaxx` expects the code to be highlighted to be provided as a text string
+via the component content or alternatively via the `value` [property](#properties).
+```jsx
+<Syntaxx language="bash">{`CODE_TO=beHighlighted`}</Syntaxx>
+```
+
+**Best practices:**
+* Use [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+  to preserve new lines, indentation and ease usage of `'` and `"`
+* If the content starts with a new line `\n`, the first character is ignored. Developers can therefore
+  easily check the indentation, including for the first line
+  ```js
+  const content = `
+  while(true) {
+    console.log('Blabetiblou');
+  }`
+  ```
+  will display the code, skipping the first empty line
+  ```js
+  while(true) {
+    console.log('Blabetiblou');
+  }
+  ```
+* Longer content should be declared in separated files and later imported
+  ```jsx
+  export const content = `...`
+
+  import {content} from './codes.js'
+  ```
+
 ### Properties
 
 | Prop name | default value | description
 | --- | --- | --- |
 | `language`  | (required) | expected programming language to be highlighted. See available values in [Highlight.js doc](https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md)
-| `value` | | code to be highlighted
+| `value` | | code to be highlighted if no inner content is provided. The first new line `\n` char is ignored if present (see [content](#content) section)
 | `firstLineNumber` | 1 | Starting value for the line numbering
 
 ### Styling highlighting
