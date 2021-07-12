@@ -1,6 +1,6 @@
 {
   "name": "lowlight-react",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Made with create-react-library",
   "author": "https://github.com/raphaeljoie",
   "license": "MIT",
@@ -49,5 +49,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "lowlight": "^2.1.0"
+  }
 }
