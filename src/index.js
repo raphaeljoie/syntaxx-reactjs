@@ -4,7 +4,7 @@ import { lowlight } from 'lowlight'
 import groupLines from './groupLines'
 import toReactComponents from './toReactComponents'
 
-export default function Syntaxx({ language, value, children }) {
+const Syntaxx = ({ language, value, children, firstLineNumber }) => {
   const [reactComponents, setReactComponents] = React.useState([])
 
   const code = value || children
@@ -17,7 +17,7 @@ export default function Syntaxx({ language, value, children }) {
     // see: https://github.com/syntax-tree/hast
     const hast = lowlightHighlight.children
 
-    const groupedHast = groupLines(hast || [])
+    const groupedHast = groupLines(hast || [], firstLineNumber)
 
     setReactComponents(groupedHast.map(toReactComponents(0)))
   }, [language, code])
@@ -35,3 +35,9 @@ export default function Syntaxx({ language, value, children }) {
     </pre>
   )
 }
+
+Syntaxx.defaultProps = {
+  firstLineNumber: 1
+}
+
+export default Syntaxx

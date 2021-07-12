@@ -10,13 +10,21 @@
 - [x] **line numbering and wrapping** fully css-styleable
 - [x] **Optimized experience** both for devs and end users
 
+**Contents**
+- [Install](#install)
+- [Basic usage](#basic-usage)
+- [Configuration](#configuration)
+- [Roadmap](#roadmap)
+- [License](#license)
+
+---
 ## Install
 
 ```bash
 npm install --save syntaxx-reactjs
 ```
 
-## Usage
+## Basic usage
 
 ```jsx
 import React from 'react'
@@ -34,9 +42,21 @@ console.log(c);`
 }
 ```
 
+---
+
+## Configuration
+
+### Properties
+
+| Prop name | default value | description
+| --- | --- | --- |
+| `language`  | (required) | expected programming language to be highlighted. See available values in [Highlight.js doc](https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md)
+| `value` | | code to be highlighted
+| `firstLineNumber` | 1 | Starting value for the line numbering
+
 ## Roadmap
 - [ ] Publish on NPM
-- [ ] Start line number
+- [x] Start line number
 - [ ] Mark line
 - [ ] Line comment
 - [ ] Inline code

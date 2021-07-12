@@ -12,7 +12,7 @@ console.log(text)`
   return (
     <div style={{padding: 30}}>
       <h1>Code as property</h1>
-      <Syntaxx language="javascript" value={code} />
+      <Syntaxx language="javascript" value={code} firstLineNumber={12} />
       <h1>Code as children</h1>
       <Syntaxx language="javascript">
         {`

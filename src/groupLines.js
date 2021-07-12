@@ -66,9 +66,9 @@ const newLine = (num) => {
   ]
 }
 
-const groupLines = (hastNodes) => {
+const groupLines = (hastNodes, firstLineNumber) => {
   // list of HAST nodes
-  let hastNodesOutput = newLine(1)
+  let hastNodesOutput = newLine(firstLineNumber)
   hastNodes.forEach((hastNode) => {
     // list HAST nodes
     const hastLineNodes = splitNewLine(hastNode)
@@ -78,7 +78,7 @@ const groupLines = (hastNodes) => {
       if (index + 1 < hastLineNodes.length) {
         hastNodesOutput = [
           ...hastNodesOutput,
-          ...newLine(hastNodesOutput.length / 2 + 1)
+          ...newLine(hastNodesOutput.length / 2 + firstLineNumber)
         ]
       }
     })
