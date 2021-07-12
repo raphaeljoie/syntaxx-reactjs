@@ -48,7 +48,8 @@
     "react-scripts": "^3.4.1"
   },
   "files": [
-    "dist"
+    "dist",
+    "styles"
   ],
   "dependencies": {
     "lowlight": "^2.1.0"

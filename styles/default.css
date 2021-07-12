@@ -1,0 +1,15 @@
+pre > code > span.lljs-grid > span:nth-of-type(odd),
+pre > code > span.lljs-grid > span.lljs-linenumber {
+  padding: 0 0.5em;
+  text-align: right;
+  user-select: none;
+  background-color: #CCC;
+  margin-bottom: 1px;
+  margin-right: 5px;
+}
+
+pre > code > span.lljs-grid > span:nth-of-type(even),
+pre > code > span.lljs-grid > span.lljs-line {
+  padding-left: 1em;
+  text-indent: -1em;
+}

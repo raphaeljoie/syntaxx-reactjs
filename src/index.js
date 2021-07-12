@@ -1,6 +1,37 @@
 import React from 'react'
-import styles from './styles.module.css'
+import { lowlight } from 'lowlight'
 
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
+import groupLines from './groupLines'
+import toReactComponents from './toReactComponents'
+
+export default function Lowlight({ language, value, children }) {
+  const [reactComponents, setReactComponents] = React.useState([])
+
+  const code = value || children
+
+  React.useEffect(() => {
+    const cleanedCode = code.replace(/^\n+/, '')
+
+    const lowlightHighlight = lowlight.highlight(language, cleanedCode)
+    // hast representation of the code HTML
+    // see: https://github.com/syntax-tree/hast
+    const hast = lowlightHighlight.children
+
+    const groupedHast = groupLines(hast || [])
+
+    setReactComponents(groupedHast.map(toReactComponents(0)))
+  }, [language, code])
+
+  return (
+    <pre>
+      <code>
+        <span
+          className='lljs-grid'
+          style={{ display: 'grid', gridTemplateColumns: 'auto 1fr' }}
+        >
+          {reactComponents}
+        </span>
+      </code>
+    </pre>
+  )
 }
