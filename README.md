@@ -1,8 +1,8 @@
-# Lowlight React component
-[![NPM](https://img.shields.io/npm/v/lowlight-react.svg)](https://www.npmjs.com/package/lowlight-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+# Syntaxx ReactJS
+[![NPM](https://img.shields.io/npm/v/syntaxx-reactjs.svg)](https://www.npmjs.com/package/syntaxx-reactjs) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-> Include code snippets like a pro using a light ReactJS wrapper
-> around [Lowlight](https://github.com/wooorm/lowlight)
+> Highlight code syntax like pro using a truly light wrapper
+> around the amazing [Lowlight](https://github.com/wooorm/lowlight)
 
 ![./example/](./example/doc/screenshot.png)
 
@@ -13,7 +13,7 @@
 ## Install
 
 ```bash
-npm install --save lowlight-react
+npm install --save syntaxx-reactjs
 ```
 
 ## Usage
@@ -21,16 +21,16 @@ npm install --save lowlight-react
 ```jsx
 import React from 'react'
 
-import Lowlight from 'lowlight-react'
+import Syntaxx from 'syntaxx-reactjs'
 import 'highlight.js/styles/default.css'
-import 'lowlight-react/styles/default.css'
+import 'syntaxx-reactjs/styles/default.css'
 
 export default function Component() {
   code=`
 const c = 'Blabetiblou';
 console.log(c);`
 
-  return <Lowlight language='javascript' value={code} />
+  return <Syntaxx language='javascript' value={code} />
 }
 ```
 

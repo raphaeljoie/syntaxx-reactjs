@@ -4,7 +4,7 @@ import { lowlight } from 'lowlight'
 import groupLines from './groupLines'
 import toReactComponents from './toReactComponents'
 
-export default function Lowlight({ language, value, children }) {
+export default function Syntaxx({ language, value, children }) {
   const [reactComponents, setReactComponents] = React.useState([])
 
   const code = value || children
@@ -26,7 +26,7 @@ export default function Lowlight({ language, value, children }) {
     <pre>
       <code>
         <span
-          className='lljs-grid'
+          className='syntaxx-grid'
           style={{ display: 'grid', gridTemplateColumns: 'auto 1fr' }}
         >
           {reactComponents}

@@ -1,5 +1,5 @@
-pre > code > span.lljs-grid > span:nth-of-type(odd),
-pre > code > span.lljs-grid > span.lljs-linenumber {
+pre > code > span.syntaxx-grid > span:nth-of-type(odd),
+pre > code > span.syntaxx-grid > span.syntaxx-linenumber {
   padding: 0 0.5em;
   text-align: right;
   user-select: none;
@@ -8,8 +8,8 @@ pre > code > span.lljs-grid > span.lljs-linenumber {
   margin-right: 5px;
 }
 
-pre > code > span.lljs-grid > span:nth-of-type(even),
-pre > code > span.lljs-grid > span.lljs-line {
+pre > code > span.syntaxx-grid > span:nth-of-type(even),
+pre > code > span.syntaxx-grid > span.syntaxx-line {
   padding-left: 1em;
   text-indent: -1em;
 }
