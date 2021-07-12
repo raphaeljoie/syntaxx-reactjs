@@ -7,10 +7,10 @@ import toReactComponents from './toReactComponents'
 const Syntaxx = ({ language, value, children, firstLineNumber }) => {
   const [reactComponents, setReactComponents] = React.useState([])
 
-  const code = value || children
+  const code = children || value
 
   React.useEffect(() => {
-    const cleanedCode = code.replace(/^\n+/, '')
+    const cleanedCode = code.replace(/^\n/, '')
 
     const lowlightHighlight = lowlight.highlight(language, cleanedCode)
     // hast representation of the code HTML
