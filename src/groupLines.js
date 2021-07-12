@@ -14,7 +14,6 @@ const splitNewLine = (hastNode) => {
       return [hastNode]
     } else {
       const texts = hastNode.value.split('\n')
-      console.log('hastNode.value', hastNode.value, 'texts', texts)
 
       return texts.map((text, index) => {
         return {
