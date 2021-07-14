@@ -144,7 +144,7 @@ code > span.syntaxx-grid > span.syntaxx-line {
 ---
 
 ## Roadmap
-- [ ] Publish on NPM
+- [x] Publish on NPM
 - [x] Start line number
 - [ ] Mark line
 - [ ] Line comment
