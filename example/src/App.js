@@ -5,6 +5,8 @@ import 'highlight.js/styles/default.css'
 import 'syntaxx-reactjs/styles/default.css'
 
 const App = () => {
+  const [firstLine, setFirstLine] = React.useState(1)
+
   const code = `
 const text = 'Blabetiblou World!'
 console.log(text)`
@@ -12,7 +14,12 @@ console.log(text)`
   return (
     <div style={{padding: 30}}>
       <h1>Code as property</h1>
-      <Syntaxx language="javascript" value={code} firstLineNumber={12} />
+      <p>
+        First line number: <select value={firstLine} onChange={e => setFirstLine(parseInt(e.target.value))}>
+          {[1,2,3,4,5,6].map(i => <option key={i} value={i}>{i}</option>)}
+        </select>
+      </p>
+      <Syntaxx language="javascript" value={code} firstLineNumber={firstLine} />
       <h1>Code as children</h1>
       <Syntaxx language="javascript">
         {`

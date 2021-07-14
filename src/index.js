@@ -20,7 +20,7 @@ const Syntaxx = ({ language, value, children, firstLineNumber }) => {
     const groupedHast = groupLines(hast || [], firstLineNumber)
 
     setReactComponents(groupedHast.map(toReactComponents(0)))
-  }, [language, code])
+  }, [language, code, firstLineNumber])
 
   return (
     <pre>

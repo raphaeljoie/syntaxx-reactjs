@@ -153,7 +153,7 @@ code > span.syntaxx-grid > span.syntaxx-line {
 - [ ] optional empty first line removal
 - [ ] optionally load languages
 - [ ] dynamic styling
-- [ ] render optimization
+- [x] render optimization
 - [ ] responsive layout
 - [ ] optional line numbering select protection
 
