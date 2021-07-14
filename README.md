@@ -28,6 +28,13 @@
 npm install --save syntaxx-reactjs
 ```
 
+### NextJS Compatibility
+This package is using Lowlight that is provided as [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
+Node 12+ is needed to use it, and it must be `import`ed instead of `require`d.
+Unfortunately NextJS doesn't support ESM yet.
+
+[See workaround](./example-nextjs/README.md)
+
 ## Basic usage
 
 ```jsx

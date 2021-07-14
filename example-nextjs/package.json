@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^10.2.3",
+    "next-transpile-modules": "^8.0.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "syntaxx-reactjs": "file:.."
+  }
+}
