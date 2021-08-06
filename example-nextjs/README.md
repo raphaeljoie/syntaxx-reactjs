@@ -26,9 +26,13 @@ module.exports = withTM({
 
 ## Run the example
 In this folder
-```
+```sh
 npm install
+# run in dev
 npm run dev
+# or in prod
+npm run build
+npm run start
 ```
 and browse `http://localhost:3000`
 

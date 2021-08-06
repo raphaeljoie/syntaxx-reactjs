@@ -40,4 +40,8 @@ Syntaxx.defaultProps = {
   firstLineNumber: 1
 }
 
+Syntaxx.registerLanguage = (language, syntax) => {
+  lowlight.registerLanguage(language, syntax)
+}
+
 export default Syntaxx
