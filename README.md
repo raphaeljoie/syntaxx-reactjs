@@ -157,7 +157,8 @@ code > span.syntaxx-grid > span.syntaxx-line {
 - [ ] Line comment
 - [ ] Inline code
 - [ ] de-indent
-- [ ] optional empty first line removal
+- [ ] optional empty first line removal + write doc of registerLanguage
+- [ ] add property of component to register language
 - [ ] optionally load languages
 - [ ] dynamic styling
 - [x] render optimization
