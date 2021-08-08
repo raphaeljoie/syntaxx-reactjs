@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.5] - 2021-08-08
+### Changed
+- Fix nested new line not properly grouped ([#1](https://github.com/raphaeljoie/syntaxx-reactjs/issues/1))
+
+
 ## [0.1.4] - 2021-08-06
 ### Added
 - create `Syntaxx.registerLanguage` to register language and fix production build error

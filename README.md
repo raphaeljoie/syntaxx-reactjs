@@ -164,6 +164,8 @@ code > span.syntaxx-grid > span.syntaxx-line {
 - [x] render optimization
 - [ ] responsive layout
 - [ ] optional line numbering select protection
+- [ ] demo website
+- [ ] secondary stylesheet
 
 ## License
 
