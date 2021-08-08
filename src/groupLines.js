@@ -10,6 +10,8 @@ const cloneHastNode = ({ children, type, value, properties, tagName }) => {
 
 const splitNewLine = (hastNode) => {
   if (hastNode.type === 'text') {
+    // HAST node is a text node, it can't have a child
+
     if (hastNode.value.indexOf('\n') === -1) {
       return [hastNode]
     } else {
@@ -23,6 +25,8 @@ const splitNewLine = (hastNode) => {
       })
     }
   } else if (hastNode.children && hastNode.children.length) {
+    // HAST node is an element with at least on child
+
     const { children, ...newParent } = hastNode
     newParent.children = []
 
@@ -30,16 +34,18 @@ const splitNewLine = (hastNode) => {
     children.forEach((childHastNode) => {
       const hastLineNodes = splitNewLine(childHastNode)
       hastLineNodes.forEach((hastLineNode, index) => {
-        out[out.length - 1].children.push(hastLineNode)
-        if (index + 1 < hastLineNode.length) {
+        if (index > 0) {
           out.push(cloneHastNode(newParent))
         }
+
+        out[out.length - 1].children.push(hastLineNode)
       })
     })
 
     return out
   } else {
-    return [hastNode]
+    // element without children
+    return [cloneHastNode(hastNode)]
   }
 }
 
@@ -65,21 +71,33 @@ const newLine = (num) => {
   ]
 }
 
+/**
+ * Takes a HAST representation of the highlighted code and generate a HAST
+ * representation of the same code, but the lines grouped
+ */
 const groupLines = (hastNodes, firstLineNumber) => {
-  // list of HAST nodes
+  // output contains at least one empty line
   let hastNodesOutput = newLine(firstLineNumber)
+
+  if (!hastNodes) return hastNodesOutput
+
+  // Loop through the HAST nodes of the highlighted code
   hastNodes.forEach((hastNode) => {
-    // list HAST nodes
+    // split each node at new line
     const hastLineNodes = splitNewLine(hastNode)
 
+    // Add the split nodes to the output.
     hastLineNodes.forEach((hastLineNode, index) => {
-      hastNodesOutput[hastNodesOutput.length - 1].children.push(hastLineNode)
-      if (index + 1 < hastLineNodes.length) {
+      // Start a new line before the addition of a new element, if there are
+      // more than one.
+      if (index > 0) {
         hastNodesOutput = [
           ...hastNodesOutput,
           ...newLine(hastNodesOutput.length / 2 + firstLineNumber)
         ]
       }
+
+      hastNodesOutput[hastNodesOutput.length - 1].children.push(hastLineNode)
     })
   })
 

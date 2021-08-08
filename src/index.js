@@ -10,6 +10,7 @@ const Syntaxx = ({ language, value, children, firstLineNumber }) => {
   const code = children || value
 
   React.useEffect(() => {
+    // Remove blank first line
     const cleanedCode = code.replace(/^\n/, '')
 
     const lowlightHighlight = lowlight.highlight(language, cleanedCode)

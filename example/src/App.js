@@ -44,6 +44,15 @@ function neverDeclared() {
 }
 `}
       </Syntaxx>
+
+      <h1>Complex line split</h1>
+      <Syntaxx language="javascript">
+        {`
+const code=\`
+const a=1;
+const b=2;\`
+`}
+      </Syntaxx>
     </div>
   )
 }
