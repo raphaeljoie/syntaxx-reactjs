@@ -8,8 +8,11 @@
   "type": "module",
   "main": "dist/index.js",
   "exports": {
-    "import": "./dist/index.modern.js",
-    "require": "./dist/index.js"
+    ".": {
+      "import": "./dist/index.modern.js",
+      "require": "./dist/index.js"
+    },
+    "./styles/*": "./styles/*"
   },
   "source": "src/index.js",
   "engines": {
