@@ -5,8 +5,12 @@
   "author": "https://github.com/raphaeljoie",
   "license": "MIT",
   "repository": "https://github.com/raphaeljoie/lowlight-react",
+  "type": "module",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
+  "exports": {
+    "import": "./dist/index.modern.js",
+    "require": "./dist/index.js"
+  },
   "source": "src/index.js",
   "engines": {
     "node": ">=10"
