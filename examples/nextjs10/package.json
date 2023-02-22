@@ -10,6 +10,6 @@
     "next-transpile-modules": "^8.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "syntaxx-reactjs": "file:.."
+    "syntaxx-reactjs": "file:../.."
   }
 }
